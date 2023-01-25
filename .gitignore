@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+# build
+/build
+# idea
+/.idea
+/.husky
+/.next
+/.eslintcache
+/lib/ckeditor5-custom/
+/.history
+
+# dotenv environment variable files
+.env
+.env.development
+.env.production
+.env.local
