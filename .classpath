@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="com/blws/BlwsMarket/controller/|com/blws/BlwsMarket/dao/|com/blws/BlwsMarket/service/" kind="src" path="BlwsMarket/src/main/java"/>
+	<classpathentry kind="src" path="BlwsMarket/src/main/java/com/blws/BlwsMarket/controller"/>
+	<classpathentry kind="src" path="BlwsMarket/src/main/java/com/blws/BlwsMarket/dao"/>
+	<classpathentry kind="src" path="BlwsMarket/src/main/java/com/blws/BlwsMarket/service"/>
+	<classpathentry kind="src" path="BlwsMarket/src/test/java"/>
+	<classpathentry kind="lib" path="BlwsMarket/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
