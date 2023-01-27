@@ -40,6 +40,7 @@ package com.blws.BlwsMarket.service;
 import com.blws.BlwsMarket.mapper.UserMapper;
 import com.blws.BlwsMarket.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
