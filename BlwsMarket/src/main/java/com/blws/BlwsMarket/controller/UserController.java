@@ -1,29 +1,75 @@
-import org.springframework.web.bind.annotation.*;
+// package com.blws.BlwsMarket.controller;
+
+// import com.blws.BlwsMarket.service.UserService;
+// import com.blws.BlwsMarket.vo.UserVO;
+// import lombok.RequiredArgsConstructor;
+// import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.stereotype.Controller;
+// import org.springframework.web.bind.annotation.GetMapping;
+// import org.springframework.web.bind.annotation.PostMapping;
+
+// @Controller
+// @RequiredArgsConstructor
+// public class UserController {
+//     @Autowired
+//     UserService userService;
+
+//     /**
+//      * 회원가입 폼
+//      * 
+//      * @return
+//      */
+//     @GetMapping("/signUp")
+//     public String signUpForm() {
+//         return "signup";
+//     }
+
+//     /**
+//      * 회원가입 진행
+//      * 
+//      * @param user
+//      * @return
+//      */
+//     @PostMapping("/signUp")
+//     public String signUp(UserVO userVO) {
+//         userService.joinUser(userVO);
+//         return "redirect:/login"; // 로그인 구현 예정
+//     }
+// }
+
+package com.blws.BlwsMarket.controller;
+
+import com.blws.BlwsMarket.service.UserService;
+import com.blws.BlwsMarket.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import javax.validation.Valid;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
-@RestController
-@RequestMapping("/api/users")
+@Controller
 public class UserController {
-    
     @Autowired
-    private UserService userService;
+    UserService userService;
 
-    @PostMapping("/register")
-    public ResponseEntity<User> registerUser(@Valid @RequestBody AuthRequest authRequest) {
-        User user = userService.register(authRequest);
-        return ResponseEntity.ok(user);
+    /**
+     * 회원가입 폼
+     * 
+     * @return
+     */
+    @GetMapping("/signUp")
+    public String signUpForm() {
+        return "signup";
     }
 
-    @PostMapping("/login")
-    public ResponseEntity<User> login(@Valid @RequestBody AuthRequest authRequest) {
-        User user = userService.login(authRequest);
-        return ResponseEntity.ok(user);
-    }
-
-    @GetMapping("/me")
-    public ResponseEntity<User> getCurrentUser(@RequestHeader("Authorization") String token) {
-        User user = userService.getCurrentUser(token);
-        return ResponseEntity.ok(user);
+    /**
+     * 회원가입 진행
+     * 
+     * @param user
+     * @return
+     */
+    @PostMapping("/signUp")
+    public String signUp(UserVO userVO) {
+        userService.joinUser(userVO);
+        return "redirect:/login"; // 로그인 구현 예정
     }
 }
